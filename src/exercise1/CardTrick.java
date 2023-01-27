@@ -12,11 +12,12 @@ public class CardTrick {
     
     public static void main(String[] args) {
         
-        Card[] hand = new Card[7];
+        
+        Card[] hand = new Card[7];      
 
         for (int i = 0; i < hand.length; i++) {
             Card card = new Card();
-            //card.setValue(insert call to random number generator here)
+            card.setValue((int)Math.random()*13+1);
             // 
             //card.setSuit(Card.SUITS[insert call to random number between 0-3 here])
             // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
@@ -61,6 +62,7 @@ public class CardTrick {
 
         System.out.println();
         
+       
     
     }
 
