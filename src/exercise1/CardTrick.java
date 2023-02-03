@@ -9,6 +9,7 @@ package exercise1;
  * @author Paul Bonenfant Jan 25, 2022 
  */
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class CardTrick {
@@ -18,13 +19,14 @@ public class CardTrick {
         
         Card[] hand = new Card[7];
         
-        int value = (int)Math.random()*13+1;
-        int suit =(int)Math.random()*3; 
+        Random r1 = new Random();
+        
 
         for (int i = 0; i < hand.length; i++) {
             Card card = new Card();
-            card.setValue(value);
-            card.setSuit(Card.SUITS[suit]);
+            card.setValue(r1.nextInt(13)+1);
+            card.setSuit(Card.SUITS[r1.nextInt(4)]);
+            hand[i] = card;
             // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
             //       Don't worry about duplicates at this point
         } 
@@ -39,14 +41,14 @@ public class CardTrick {
         
         //Create a Scanner
         Scanner input = new Scanner(System.in);
-        System.out.print("Please guess a card suit from 0-3");
-        String suitInputUser = input.nextLine();
+        System.out.print("Please guess a card suit from 1-4");
+        int suitInputUser = input.nextInt();
         System.out.print("Please enter a card value from 1-13");
         int cardValueInputUser = input.nextInt();
         
         boolean userInputValidity = false;
-        for (int c=0;c<hand.length;c++){
-            if(hand[c].getValue() == value && hand[c].getSuit().equals(Card.SUITS[suit])) {
+        for (int i = 0; i < hand.length; i++){
+            if(hand[i].getValue() == cardValueInputUser && hand[i].getSuit().equals(Card.SUITS[suitInputUser])) {
                 userInputValidity = true;
                 break;
             }
