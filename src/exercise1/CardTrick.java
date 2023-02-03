@@ -86,6 +86,8 @@ public class CardTrick {
         System.out.println("-- Reading/Watching TV");
         System.out.println("-- Playing outdoor sports");
         System.out.println("-- Riding my motorcycle");
+        
+        System.out.println("I am done");
 
         System.out.println();
         
