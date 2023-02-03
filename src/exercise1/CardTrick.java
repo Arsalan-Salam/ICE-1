@@ -8,6 +8,9 @@ package exercise1;
  * @author dancye
  * @author Paul Bonenfant Jan 25, 2022 
  */
+
+import java.util.Scanner;
+
 public class CardTrick {
     
     public static void main(String[] args) {
@@ -21,8 +24,8 @@ public class CardTrick {
             card.setSuit(Card.SUITS[(int)Math.random()*3]);
             // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
             //       Don't worry about duplicates at this point
-        }
-
+        } 
+ 
         // insert code to ask the user for Card value and suit, create their card
         // and search the hand here. 
         // Hint: You can ask for values 1 to 10, and then
@@ -31,6 +34,13 @@ public class CardTrick {
         // 
         // Then loop through the cards in the array to see if there's a match.
         
+        //Create a Scanner
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please guess a card suit from 0-3");
+        String suitInputUser = input.nextLine();
+        System.out.print("Please enter a card value from 1-13");
+        int cardValueInputUser = input.nextInt();
+        //Ask user for input
         // If the guess is successful, invoke the printInfo() method below.
         
     }
