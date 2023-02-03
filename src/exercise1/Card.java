@@ -18,8 +18,6 @@ public class Card {
    public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
    
    
-   
-   CardTrick c1 = new CardTrick();
     /**
      * @return the suit
      */
