@@ -16,12 +16,15 @@ public class CardTrick {
     public static void main(String[] args) {
         
         
-        Card[] hand = new Card[7];      
+        Card[] hand = new Card[7];
+        
+        int value = (int)Math.random()*13+1;
+        int suit =(int)Math.random()*3; 
 
         for (int i = 0; i < hand.length; i++) {
             Card card = new Card();
-            card.setValue((int)Math.random()*13+1);
-            card.setSuit(Card.SUITS[(int)Math.random()*3]);
+            card.setValue(value);
+            card.setSuit(Card.SUITS[suit]);
             // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
             //       Don't worry about duplicates at this point
         } 
@@ -40,8 +43,21 @@ public class CardTrick {
         String suitInputUser = input.nextLine();
         System.out.print("Please enter a card value from 1-13");
         int cardValueInputUser = input.nextInt();
-        //Ask user for input
-        // If the guess is successful, invoke the printInfo() method below.
+        
+        boolean userInputValidity = false;
+        for (int c=0;c<hand.length;c++){
+            if(hand[c].getValue() == value && hand[c].getSuit().equals(Card.SUITS[suit])) {
+                userInputValidity = true;
+                break;
+            }
+        }
+        
+        if(userInputValidity){
+            printInfo();
+        }
+        else{
+            System.out.println("Sorry incorrect card guess, please try again");
+        }
         
     }
 
